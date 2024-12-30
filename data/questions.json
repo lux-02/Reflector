@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "text": "올해 가장 많이 만난 사람은 누구인가요?",
+      "category": "Relationships",
+      "answer": ""
+    },
+    {
+      "text": "올해 가장 고마운 사람은 누구인가요?",
+      "category": "Relationships",
+      "answer": ""
+    },
+    {
+      "text": "올해 가장 친해진 사람은 누구인가요?",
+      "category": "Relationships",
+      "answer": ""
+    }
+  ]
+}
