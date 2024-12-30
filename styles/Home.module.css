@@ -176,11 +176,12 @@ a.secondary {
 
 .questionItem {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-alpha-200);
   margin-bottom: 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
+  transition: all 0.3s ease;
 }
 
 .questionItem:hover {
@@ -260,9 +261,10 @@ a.secondary {
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 32px !important;
+  height: 32px !important;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .signOutButton {
@@ -275,4 +277,15 @@ a.secondary {
 
 .signOutButton:hover {
   background-color: var(--gray-alpha-100);
+}
+
+.questionItem.answered {
+  border-color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

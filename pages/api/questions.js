@@ -13,20 +13,16 @@ export default async function handler(req, res) {
     case "GET":
       try {
         const questions = await Question.find({}).lean();
-        res.status(200).json(questions);
+        const questionsWithUserAnswers = questions.map((question) => ({
+          ...question,
+          answer:
+            question.answers?.find((a) => a.userId === req.query.userId)
+              ?.content || "",
+        }));
+        res.status(200).json(questionsWithUserAnswers);
       } catch (error) {
         console.error("질문 조회 오류:", error);
         res.status(500).json({ error: "질문을 불러오는데 실패했습니다." });
-      }
-      break;
-
-    case "POST":
-      try {
-        const question = await Question.create(req.body);
-        res.status(201).json(question);
-      } catch (error) {
-        console.error("질문 생성 오류:", error);
-        res.status(500).json({ error: "질문을 생성하는데 실패했습니다." });
       }
       break;
 
