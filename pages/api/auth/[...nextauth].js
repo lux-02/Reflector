@@ -12,6 +12,12 @@ export const authOptions = {
   ],
   adapter: MongoDBAdapter(clientPromise, {
     databaseName: "reflector",
+    collections: {
+      Users: "users",
+      Accounts: "accounts",
+      Sessions: "sessions",
+      VerificationTokens: "verification_tokens",
+    },
   }),
   secret: process.env.NEXTAUTH_SECRET,
   session: {
