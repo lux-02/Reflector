@@ -10,12 +10,14 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
       authorization: {
         params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-          scope: "openid email profile",
+          access_type: "online",
+          prompt: "select_account",
+          scope:
+            "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
         },
       },
+      checks: ["none"],
+      allowDangerousEmailAccountLinking: true,
     }),
   ],
   adapter: MongoDBAdapter(clientPromise, {
