@@ -25,7 +25,7 @@ export default function SignIn() {
           className={styles.googleButton}
           onClick={() => signIn("google", { callbackUrl: "/" })}
         >
-          Google로 시작하기
+          Log in with Google
         </button>
       </div>
     </div>
