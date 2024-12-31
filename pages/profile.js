@@ -29,13 +29,20 @@ export default function Profile() {
     try {
       const response = await fetch(`/api/questions?userId=${session.user.id}`);
       const questions = await response.json();
-      const answered = questions.filter((q) =>
-        q.answers?.some((a) => a.userId === session.user.id && a.content)
-      );
+      const answered = getAnsweredQuestions(questions);
       setAnsweredQuestions(answered);
     } catch (error) {
       console.error("답변한 질문을 불러오는데 실패했습니다:", error);
     }
+  };
+
+  const getAnsweredQuestions = (questions) => {
+    return questions.filter((question) => {
+      const userAnswer = question.answers?.find(
+        (answer) => answer.userId === session.user.id && answer.answer
+      );
+      return userAnswer;
+    });
   };
 
   if (status === "loading") {
@@ -85,13 +92,13 @@ export default function Profile() {
           <div className={styles.questionList}>
             {answeredQuestions.map((question) => (
               <div key={question._id} className={styles.questionItem}>
-                <p className={styles.questionText} lang={locale}>
+                <h3 className={styles.questionText} lang={locale}>
                   {question.text[locale]}
-                </p>
-                <p className={styles.answer}>
+                </h3>
+                <p className={styles.answerText}>
                   {
                     question.answers.find((a) => a.userId === session.user.id)
-                      ?.content
+                      ?.answer
                   }
                 </p>
               </div>

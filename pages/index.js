@@ -167,8 +167,8 @@ export default function Home() {
     return [...questions].sort((a, b) => {
       const aAnswer = a.answers?.find((ans) => ans.userId === session.user.id);
       const bAnswer = b.answers?.find((ans) => ans.userId === session.user.id);
-      if (aAnswer?.content && !bAnswer?.content) return 1;
-      if (!aAnswer?.content && bAnswer?.content) return -1;
+      if (aAnswer?.answer && !bAnswer?.answer) return 1;
+      if (!aAnswer?.answer && bAnswer?.answer) return -1;
       return 0;
     });
   };
@@ -176,7 +176,7 @@ export default function Home() {
   const getCompletedCount = (questions) => {
     return questions.filter((q) => {
       const userAnswer = q.answers?.find((a) => a.userId === session.user.id);
-      return userAnswer && userAnswer.content;
+      return userAnswer && userAnswer.answer;
     }).length;
   };
 
@@ -295,8 +295,8 @@ export default function Home() {
                         key={question._id}
                         className={`${styles.questionItem} ${
                           question.answers?.find(
-                            (a) => a.userId === session.user.id
-                          )?.content
+                            (a) => a.userId === session.user.id && a.answer
+                          )
                             ? styles.answered
                             : ""
                         }`}
