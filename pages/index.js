@@ -8,6 +8,7 @@ import CategoryModal from "@/components/CategoryModal";
 import { useLocale } from "@/contexts/LocaleContext";
 import LanguageSelector from "@/components/LanguageSelector";
 import { translations } from "@/constants/translations";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -22,6 +23,7 @@ export default function Home() {
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const scrollRef = useRef(null);
   const { locale } = useLocale();
+  const { trackUserEngagement, trackAnswerCompletion } = useAnalytics();
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -51,6 +53,7 @@ export default function Home() {
   const handleQuestionClick = (question) => {
     setSelectedQuestion(question);
     setShowModal(true);
+    trackUserEngagement(session.user.id, "question_view");
   };
 
   const handleCloseModal = () => {
@@ -71,18 +74,22 @@ export default function Home() {
         }),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         await fetchData();
         setShowModal(false);
         setSelectedQuestion(null);
+
+        const category = selectedQuestion.category[locale];
+        const completedCount = getCompletedCount(questions);
+        trackAnswerCompletion(session.user.id, category, completedCount);
+        trackUserEngagement(session.user.id, "answer_save");
       } else {
-        console.error("답변 저장 실패:", data.error, data.details);
+        const data = await response.json();
+        console.error("답변 저장 실패:", data.error);
         alert("답변 저장에 실패했습니다. 다시 시도해주세요.");
       }
     } catch (error) {
-      console.error("답변 저장 실패:", error);
+      console.error("답변 저장 중 오류:", error);
       alert("답변 저장 중 오류가 발생했습니다.");
     }
   };
