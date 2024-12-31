@@ -4,68 +4,159 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
 }
 
 .modal {
   background-color: var(--background);
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 8px;
   width: 90%;
-  max-width: 500px;
-  border: 1px solid rgba(76, 175, 80, 0.3);
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-out;
 }
 
-.modal h2 {
-  margin-bottom: 4rem;
-  font-size: 1.2rem;
-}
-
-.modal textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--gray-alpha-200);
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  resize: vertical;
-  min-height: 120px;
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-}
-
-.buttons button {
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.buttons button[type="submit"] {
-  color: white;
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
   border: none;
-  transition: background-color 0.2s;
-  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--foreground);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-.buttons button[type="submit"]:hover {
-  background-color: #45a049;
+.closeButton:hover {
+  background-color: var(--gray-alpha-100);
+  transform: rotate(90deg);
 }
 
-.buttons button[type="button"] {
-  background: none;
-  border: 1px solid var(--gray-alpha-200);
+.question {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+  font-weight: 600;
+  line-height: 1.4;
+  padding-right: 2rem;
 }
 
-.answeredMode .modal {
-  border-color: rgba(76, 175, 80, 0.5);
+.answerInput {
+  width: 100%;
+  min-height: 200px;
+  padding: 1rem;
+  border: 2px solid var(--gray-alpha-200);
+  border-radius: 12px;
+  resize: vertical;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
 }
 
-.answeredMode textarea {
-  border-color: rgba(76, 175, 80, 0.3);
+.answerInput:focus {
+  outline: none;
+  border-color: var(--foreground);
+  box-shadow: 0 0 0 3px var(--gray-alpha-100);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.saveButton {
+  padding: 0.75rem 2rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.saveButton:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 다크 모드 대응 */
+@media (prefers-color-scheme: dark) {
+  .modal {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .answerInput {
+    background-color: var(--gray-alpha-100);
+  }
+
+  .answerInput:focus {
+    background-color: var(--background);
+  }
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .modal {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .question {
+    font-size: 1.25rem;
+  }
+
+  .answerInput {
+    min-height: 150px;
+  }
+
+  .saveButton {
+    padding: 0.6rem 1.5rem;
+  }
 }

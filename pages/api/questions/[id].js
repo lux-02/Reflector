@@ -1,4 +1,4 @@
-import { connectToDatabase } from "@/lib/mongodb-adapter";
+import clientPromise from "@/lib/mongodb-adapter";
 import { ObjectId } from "mongodb";
 
 export default async function handler(req, res) {
@@ -14,8 +14,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const client = await connectToDatabase();
-    const db = client.connection.db();
+    const client = await clientPromise;
+    const db = client.db("reflector");
     const questions = db.collection("questions");
 
     const result = await questions.updateOne(
