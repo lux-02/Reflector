@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,23 +16,24 @@
   padding: 2rem;
   border-radius: 8px;
   width: 90%;
-  max-width: 500px;
-  border: 1px solid rgba(76, 175, 80, 0.3);
+  max-width: 600px;
 }
 
 .modal h2 {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
 }
 
 .modal textarea {
   width: 100%;
-  padding: 0.8rem;
+  padding: 1rem;
   border: 1px solid var(--gray-alpha-200);
   border-radius: 4px;
   margin-bottom: 1rem;
   resize: vertical;
-  min-height: 120px;
+  min-height: 200px;
+  font-family: monospace;
+  font-size: 14px;
 }
 
 .buttons {
@@ -47,14 +49,9 @@
 }
 
 .buttons button[type="submit"] {
-  color: white;
+  background-color: var(--foreground);
+  color: var(--background);
   border: none;
-  transition: background-color 0.2s;
-  background: none;
-}
-
-.buttons button[type="submit"]:hover {
-  background-color: #45a049;
 }
 
 .buttons button[type="button"] {
@@ -62,10 +59,8 @@
   border: 1px solid var(--gray-alpha-200);
 }
 
-.answeredMode .modal {
-  border-color: rgba(76, 175, 80, 0.5);
-}
-
-.answeredMode textarea {
-  border-color: rgba(76, 175, 80, 0.3);
+.error {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }

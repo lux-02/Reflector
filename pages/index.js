@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "@/styles/Home.module.css";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import AnswerModal from "@/components/AnswerModal";
 import Image from "next/image";
+import CategoryModal from "@/components/CategoryModal";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -13,6 +14,10 @@ export default function Home() {
   const [answer, setAnswer] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState("");
+  const categoryRefs = useRef({});
+  const [showCategoryModal, setShowCategoryModal] = useState(false);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -108,6 +113,46 @@ export default function Home() {
   };
 
   const groupedQuestions = groupQuestionsByCategory();
+  const categories = Object.keys(groupedQuestions);
+
+  useEffect(() => {
+    if (categories.length > 0 && !currentCategory) {
+      setCurrentCategory(categories[0]);
+    }
+  }, [categories]);
+
+  const handleCategoryClick = (category) => {
+    setCurrentCategory(category);
+    const categoryElement = document.querySelector(
+      `[data-category="${category}"]`
+    );
+    if (categoryElement && scrollRef.current) {
+      const scrollContainer = scrollRef.current;
+      const scrollLeft =
+        categoryElement.offsetLeft - scrollContainer.offsetLeft - 16;
+      scrollContainer.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (currentCategory) {
+      const categoryElement = document.querySelector(
+        `[data-category="${currentCategory}"]`
+      );
+      if (categoryElement && scrollRef.current) {
+        const scrollContainer = scrollRef.current;
+        const scrollLeft =
+          categoryElement.offsetLeft - scrollContainer.offsetLeft - 16;
+        scrollContainer.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [currentCategory]);
 
   const sortQuestionsByAnswer = (questions) => {
     return [...questions].sort((a, b) => {
@@ -115,6 +160,10 @@ export default function Home() {
       if (!a.answer && b.answer) return -1;
       return 0;
     });
+  };
+
+  const getCompletedCount = (questions) => {
+    return questions.filter((q) => q.answer).length;
   };
 
   if (status === "loading") {
@@ -125,27 +174,22 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.profile}>
-          {session?.user?.image && (
+          <div className={styles.logoWrapper}>
             <Image
-              src={session.user.image}
-              alt="Profile"
+              src="/logo.png"
+              alt="Reflector Logo"
               width={32}
               height={32}
-              className={styles.avatar}
+              className={styles.headerLogo}
               priority
-              onError={(e) => {
-                e.target.src = "/default-avatar.png";
-              }}
             />
-          )}
+          </div>
           <span>{session?.user?.name}</span>
         </div>
         <button onClick={() => signOut()} className={styles.signOutButton}>
           로그아웃
         </button>
       </div>
-
-      <h1>Reflector</h1>
 
       {questions.length === 0 && (
         <button
@@ -157,13 +201,59 @@ export default function Home() {
         </button>
       )}
 
+      <nav className={styles.categoryNav}>
+        <div className={styles.categoryNavWrapper}>
+          <button
+            className={styles.viewAllButton}
+            onClick={() => setShowCategoryModal(true)}
+          >
+            <span>전체 보기</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div className={styles.categoryScroll} ref={scrollRef}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                data-category={category}
+                className={`${styles.categoryTab} ${
+                  currentCategory === category ? styles.active : ""
+                }`}
+                onClick={() => handleCategoryClick(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
+
       <div className={styles.categoryContainer}>
-        {Object.entries(groupedQuestions).map(
-          ([category, categoryQuestions]) => (
-            <div key={category} className={styles.category}>
-              <h2 className={styles.categoryTitle}>{category}</h2>
-              <div className={styles.questionList}>
-                {sortQuestionsByAnswer(categoryQuestions).map((question) => (
+        {currentCategory && groupedQuestions[currentCategory] && (
+          <div className={styles.category}>
+            <div className={styles.categoryTitleWrapper}>
+              <h2 className={styles.categoryTitle}>{currentCategory}</h2>
+              <div className={styles.questionCount}>
+                <span className={styles.completedCount}>
+                  {getCompletedCount(groupedQuestions[currentCategory])}
+                </span>
+                <span className={styles.totalCount}>
+                  / {groupedQuestions[currentCategory].length}
+                </span>
+              </div>
+            </div>
+            <div className={styles.questionList}>
+              {sortQuestionsByAnswer(groupedQuestions[currentCategory]).map(
+                (question) => (
                   <div
                     key={question._id}
                     className={`${styles.questionItem} ${
@@ -173,12 +263,21 @@ export default function Home() {
                   >
                     {question.text}
                   </div>
-                ))}
-              </div>
+                )
+              )}
             </div>
-          )
+          </div>
         )}
       </div>
+
+      {showCategoryModal && (
+        <CategoryModal
+          categories={categories}
+          currentCategory={currentCategory}
+          onSelect={handleCategoryClick}
+          onClose={() => setShowCategoryModal(false)}
+        />
+      )}
 
       {showModal && selectedQuestion && (
         <AnswerModal

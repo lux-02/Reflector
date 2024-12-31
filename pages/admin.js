@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "@/styles/Admin.module.css";
+import JsonInputModal from "@/components/JsonInputModal";
 
 export default function Admin() {
   const [questions, setQuestions] = useState([]);
@@ -9,6 +10,7 @@ export default function Admin() {
     category: "",
   });
   const fileInputRef = useRef(null);
+  const [showJsonModal, setShowJsonModal] = useState(false);
 
   useEffect(() => {
     fetchQuestions();
@@ -100,36 +102,27 @@ export default function Admin() {
     }
   };
 
-  const handleFileImport = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
+  const handleJsonApply = async (questions) => {
     try {
-      const text = await file.text();
-      const data = JSON.parse(text);
-
-      if (!Array.isArray(data.questions)) {
-        alert("올바른 형식의 JSON 파일이 아닙니다.");
-        return;
-      }
-
       const response = await fetch("/api/questions/import", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ questions: data.questions }),
+        body: JSON.stringify({ questions }),
       });
 
       if (response.ok) {
         await fetchQuestions();
+        setShowJsonModal(false);
         alert("질문이 성공적으로 임포트되었습니다.");
+      } else {
+        alert("질문 임포트에 실패했습니다.");
       }
     } catch (error) {
-      console.error("파일 임포트 실패:", error);
-      alert("파일 임포트에 실패했습니다.");
+      console.error("질문 임포트 실패:", error);
+      alert("질문 임포트 중 오류가 발생했습니다.");
     }
-    fileInputRef.current.value = "";
   };
 
   return (
@@ -137,13 +130,12 @@ export default function Admin() {
       <h1>관리자 페이지</h1>
 
       <div className={styles.adminActions}>
-        <input
-          type="file"
-          accept=".json"
-          onChange={handleFileImport}
-          ref={fileInputRef}
-          className={styles.fileInput}
-        />
+        <button
+          onClick={() => setShowJsonModal(true)}
+          className={styles.importButton}
+        >
+          JSON 데이터 입력
+        </button>
         <button onClick={handleClearAll} className={styles.dangerButton}>
           전체 삭제
         </button>
@@ -213,6 +205,13 @@ export default function Admin() {
           )
         )}
       </div>
+
+      {showJsonModal && (
+        <JsonInputModal
+          onClose={() => setShowJsonModal(false)}
+          onApply={handleJsonApply}
+        />
+      )}
     </div>
   );
 }

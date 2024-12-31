@@ -26,6 +26,29 @@ export default async function handler(req, res) {
       }
       break;
 
+    case "POST":
+      try {
+        const { text, category } = req.body;
+
+        if (!text || !category) {
+          return res
+            .status(400)
+            .json({ error: "질문과 카테고리는 필수입니다." });
+        }
+
+        const question = await Question.create({
+          text,
+          category,
+          answers: [],
+        });
+
+        res.status(201).json(question);
+      } catch (error) {
+        console.error("질문 생성 오류:", error);
+        res.status(500).json({ error: "질문을 생성하는데 실패했습니다." });
+      }
+      break;
+
     default:
       res.status(405).json({ error: "허용되지 않는 메소드입니다." });
       break;

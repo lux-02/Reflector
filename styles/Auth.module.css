@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: var(--background);
+  background-color: #0a0a0a;
 }
 
 .signInBox {
@@ -12,19 +12,39 @@
   border: 1px solid var(--gray-alpha-200);
   border-radius: 8px;
   text-align: center;
+  min-width: 320px;
+}
+
+.logoWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 0 auto;
+  animation: spin 5s linear infinite;
+}
+
+.logo:hover {
+  animation-play-state: paused;
 }
 
 .signInBox h1 {
   margin-bottom: 0.5rem;
   color: var(--foreground);
+  font-size: 1.8rem;
 }
 
 .signInBox p {
   margin-bottom: 2rem;
   color: var(--gray-alpha-200);
+  font-size: 1rem;
 }
 
 .googleButton {
+  width: 100%;
   padding: 0.75rem 1.5rem;
   background-color: var(--foreground);
   color: var(--background);
@@ -37,4 +57,20 @@
 
 .googleButton:hover {
   opacity: 0.9;
+}
+
+/* 다크 모드 대응 */
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: brightness(0.9);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

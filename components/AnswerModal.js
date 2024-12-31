@@ -3,6 +3,7 @@ import styles from "@/styles/AnswerModal.module.css";
 
 export default function AnswerModal({ question, onClose, onSave }) {
   const [answer, setAnswer] = useState(question.answer || "");
+  const hasAnswer = Boolean(question.answer);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,7 +11,11 @@ export default function AnswerModal({ question, onClose, onSave }) {
   };
 
   return (
-    <div className={styles.modalOverlay}>
+    <div
+      className={`${styles.modalOverlay} ${
+        hasAnswer ? styles.answeredMode : ""
+      }`}
+    >
       <div className={styles.modal}>
         <h2>{question.text}</h2>
         <form onSubmit={handleSubmit}>
@@ -21,10 +26,10 @@ export default function AnswerModal({ question, onClose, onSave }) {
             rows={5}
           />
           <div className={styles.buttons}>
-            <button type="submit">저장</button>
             <button type="button" onClick={onClose}>
               취소
             </button>
+            <button type="submit">{hasAnswer ? "수정" : "저장"}</button>
           </div>
         </form>
       </div>
