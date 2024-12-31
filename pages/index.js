@@ -15,7 +15,7 @@ export default function Home() {
   const [questions, setQuestions] = useState([]);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [answer, setAnswer] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("");
   const categoryRefs = useRef({});
@@ -31,18 +31,20 @@ export default function Home() {
 
   useEffect(() => {
     if (status === "authenticated") {
-      fetchQuestions();
+      fetchData();
     }
   }, [status]);
 
-  const fetchQuestions = async () => {
+  const fetchData = async () => {
     try {
-      const response = await fetch(`/api/questions?userId=${session.user.id}`);
+      setIsLoading(true);
+      const response = await fetch("/api/questions");
       const data = await response.json();
-      setQuestions(Array.isArray(data) ? data : []);
+      setQuestions(data);
     } catch (error) {
-      console.error("질문을 불러오는데 실패했습니다:", error);
-      setQuestions([]);
+      console.error("질문 목록을 불러오는데 실패했습니다:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -72,7 +74,7 @@ export default function Home() {
       const data = await response.json();
 
       if (response.ok) {
-        await fetchQuestions();
+        await fetchData();
         setShowModal(false);
         setSelectedQuestion(null);
       } else {
@@ -92,7 +94,7 @@ export default function Home() {
         method: "POST",
       });
       if (response.ok) {
-        await fetchQuestions();
+        await fetchData();
       } else {
         console.error("초기 데이터 생성 실패");
       }
@@ -215,116 +217,116 @@ export default function Home() {
         </div>
       </div>
 
-      {questions.length === 0 && (
-        <button
-          onClick={initializeData}
-          disabled={isLoading}
-          className={styles.initButton}
-          lang={locale}
-        >
-          {isLoading
-            ? translations.initializing[locale]
-            : translations.initialize[locale]}
-        </button>
-      )}
-
-      <nav className={styles.categoryNav}>
-        <div className={styles.categoryNavWrapper}>
-          <button
-            className={styles.viewAllButton}
-            onClick={() => setShowCategoryModal(true)}
-            lang={locale}
-          >
-            <span>{translations.viewAll[locale]}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          <div className={styles.categoryScroll} ref={scrollRef}>
-            {categories.map((category) => (
+      {isLoading ? (
+        <div className={styles.loadingContainer}>
+          <div className={styles.spinner}></div>
+        </div>
+      ) : (
+        <main className={styles.main}>
+          <nav className={styles.categoryNav}>
+            <div className={styles.categoryNavWrapper}>
               <button
-                key={JSON.stringify(category)}
-                data-category={JSON.stringify(category)}
-                className={`${styles.categoryTab} ${
-                  JSON.stringify(currentCategory) === JSON.stringify(category)
-                    ? styles.active
-                    : ""
-                }`}
-                onClick={() => handleCategoryClick(category)}
+                className={styles.viewAllButton}
+                onClick={() => setShowCategoryModal(true)}
                 lang={locale}
               >
-                {category[locale]}
+                <span>{translations.viewAll[locale]}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
-            ))}
-          </div>
-        </div>
-      </nav>
-
-      <div className={styles.categoryContainer}>
-        {currentCategory &&
-          groupedQuestions[JSON.stringify(currentCategory)] && (
-            <div className={styles.category}>
-              <div className={styles.categoryTitleWrapper}>
-                <h2 className={styles.categoryTitle} lang={locale}>
-                  {currentCategory[locale]}
-                </h2>
-                <div className={styles.questionCount}>
-                  <span className={styles.completedCount}>
-                    {getCompletedCount(
-                      groupedQuestions[JSON.stringify(currentCategory)]
-                    )}
-                  </span>
-                  <span className={styles.totalCount}>
-                    / {groupedQuestions[JSON.stringify(currentCategory)].length}
-                  </span>
-                </div>
-              </div>
-              <div className={styles.questionList}>
-                {sortQuestionsByAnswer(
-                  groupedQuestions[JSON.stringify(currentCategory)]
-                ).map((question) => (
-                  <div
-                    key={question._id}
-                    className={`${styles.questionItem} ${
-                      question.answers?.find(
-                        (a) => a.userId === session.user.id
-                      )?.content
-                        ? styles.answered
+              <div className={styles.categoryScroll} ref={scrollRef}>
+                {categories.map((category) => (
+                  <button
+                    key={JSON.stringify(category)}
+                    data-category={JSON.stringify(category)}
+                    className={`${styles.categoryTab} ${
+                      JSON.stringify(currentCategory) ===
+                      JSON.stringify(category)
+                        ? styles.active
                         : ""
                     }`}
-                    onClick={() => handleQuestionClick(question)}
+                    onClick={() => handleCategoryClick(category)}
+                    lang={locale}
                   >
-                    <span lang={locale}>{question.text[locale]}</span>
-                  </div>
+                    {category[locale]}
+                  </button>
                 ))}
               </div>
             </div>
+          </nav>
+
+          <div className={styles.categoryContainer}>
+            {currentCategory &&
+              groupedQuestions[JSON.stringify(currentCategory)] && (
+                <div className={styles.category}>
+                  <div className={styles.categoryTitleWrapper}>
+                    <h2 className={styles.categoryTitle} lang={locale}>
+                      {currentCategory[locale]}
+                    </h2>
+                    <div className={styles.questionCount}>
+                      <span className={styles.completedCount}>
+                        {getCompletedCount(
+                          groupedQuestions[JSON.stringify(currentCategory)]
+                        )}
+                      </span>
+                      <span className={styles.totalCount}>
+                        /{" "}
+                        {
+                          groupedQuestions[JSON.stringify(currentCategory)]
+                            .length
+                        }
+                      </span>
+                    </div>
+                  </div>
+                  <div className={styles.questionList}>
+                    {sortQuestionsByAnswer(
+                      groupedQuestions[JSON.stringify(currentCategory)]
+                    ).map((question) => (
+                      <div
+                        key={question._id}
+                        className={`${styles.questionItem} ${
+                          question.answers?.find(
+                            (a) => a.userId === session.user.id
+                          )?.content
+                            ? styles.answered
+                            : ""
+                        }`}
+                        onClick={() => handleQuestionClick(question)}
+                      >
+                        <span lang={locale}>{question.text[locale]}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+          </div>
+
+          {showCategoryModal && (
+            <CategoryModal
+              categories={categories}
+              currentCategory={currentCategory}
+              onSelect={handleCategoryClick}
+              onClose={() => setShowCategoryModal(false)}
+            />
           )}
-      </div>
 
-      {showCategoryModal && (
-        <CategoryModal
-          categories={categories}
-          currentCategory={currentCategory}
-          onSelect={handleCategoryClick}
-          onClose={() => setShowCategoryModal(false)}
-        />
-      )}
-
-      {showModal && selectedQuestion && (
-        <AnswerModal
-          question={selectedQuestion}
-          onClose={handleCloseModal}
-          onSave={handleSaveAnswer}
-        />
+          {showModal && selectedQuestion && (
+            <AnswerModal
+              question={selectedQuestion}
+              onClose={handleCloseModal}
+              onSave={handleSaveAnswer}
+            />
+          )}
+        </main>
       )}
     </div>
   );

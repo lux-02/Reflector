@@ -1,37 +1,54 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/AnswerModal.module.css";
+import { useSession } from "next-auth/react";
 import { useLocale } from "@/contexts/LocaleContext";
+import { translations } from "@/constants/translations";
 
 export default function AnswerModal({ question, onClose, onSave }) {
-  const [answer, setAnswer] = useState(question.answer || "");
-  const hasAnswer = Boolean(question.answer);
+  const [answer, setAnswer] = useState("");
+  const { data: session } = useSession();
   const { locale } = useLocale();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const userAnswer = question.answers?.find(
+      (a) => a.userId === session?.user?.id
+    );
+    if (userAnswer) {
+      setAnswer(userAnswer.answer || "");
+    }
+  }, [question, session]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSave(question._id, answer);
+    try {
+      await onSave(question._id, answer);
+    } catch (error) {
+      console.error("답변 저장 중 오류:", error);
+      alert("답변 저장에 실패했습니다.");
+    }
   };
 
   return (
-    <div
-      className={`${styles.modalOverlay} ${
-        hasAnswer ? styles.answeredMode : ""
-      }`}
-    >
+    <div className={styles.modalOverlay}>
       <div className={styles.modal}>
-        <h2>{question.text[locale]}</h2>
+        <button className={styles.closeButton} onClick={onClose}>
+          ×
+        </button>
+        <h2 className={styles.question} lang={locale}>
+          {question.text[locale]}
+        </h2>
         <form onSubmit={handleSubmit}>
           <textarea
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
-            placeholder="답변을 입력하세요..."
-            rows={5}
+            placeholder={translations.answerPlaceholder[locale]}
+            className={styles.answerInput}
+            required
           />
-          <div className={styles.buttons}>
-            <button type="button" onClick={onClose}>
-              취소
+          <div className={styles.buttonContainer}>
+            <button type="submit" className={styles.saveButton} lang={locale}>
+              {translations.save[locale]}
             </button>
-            <button type="submit">{hasAnswer ? "수정" : "저장"}</button>
           </div>
         </form>
       </div>

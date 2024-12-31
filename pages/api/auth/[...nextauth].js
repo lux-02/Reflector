@@ -11,7 +11,7 @@ export const authOptions = {
     }),
   ],
   adapter: MongoDBAdapter(clientPromise, {
-    databaseName: "myFirstDatabase",
+    databaseName: "reflector",
     collections: {
       Users: "users",
       Accounts: "accounts",
