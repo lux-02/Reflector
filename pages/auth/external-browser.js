@@ -28,6 +28,7 @@ export default function ExternalBrowser() {
     const isExternalBrowser =
       typeof window !== "undefined" &&
       !window.navigator.userAgent.includes("wv") &&
+      !/Instagram|FBAV|FBAN/.test(window.navigator.userAgent) &&
       (!/iPhone|iPod|iPad/.test(window.navigator.userAgent) ||
         /Safari/.test(window.navigator.userAgent));
 
@@ -38,22 +39,44 @@ export default function ExternalBrowser() {
 
   const handleOpenBrowser = () => {
     const loginUrl = window.location.origin + "/api/auth/signin";
+    const ua = navigator.userAgent.toLowerCase();
 
-    // iOS
-    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-      window.location.href = `googlechrome://${loginUrl.replace(
-        /^https?:\/\//,
-        ""
-      )}`;
-      // 크롬이 없는 경우를 대비해 약간의 지연 후 Safari로 시도
-      setTimeout(() => {
+    // Instagram 웹뷰 감지
+    if (ua.includes("instagram")) {
+      // iOS Instagram
+      if (ua.includes("iphone") || ua.includes("ipad") || ua.includes("ipod")) {
         window.location.href = `safari-https://${loginUrl.replace(
           /^https?:\/\//,
           ""
         )}`;
-      }, 2000);
+      }
+      // Android Instagram
+      else if (ua.includes("android")) {
+        window.location.href = `intent://${loginUrl.replace(
+          /^https?:\/\//,
+          ""
+        )}#Intent;scheme=https;package=com.android.chrome;end`;
+      }
+      return;
     }
-    // Android
+
+    // 일반 iOS
+    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      // Safari로 바로 열기 시도
+      window.location.href = `safari-https://${loginUrl.replace(
+        /^https?:\/\//,
+        ""
+      )}`;
+
+      // 실패할 경우 Chrome으로 시도
+      setTimeout(() => {
+        window.location.href = `googlechrome://${loginUrl.replace(
+          /^https?:\/\//,
+          ""
+        )}`;
+      }, 1000);
+    }
+    // 일반 Android
     else if (/Android/.test(navigator.userAgent)) {
       window.location.href = `intent://${loginUrl.replace(
         /^https?:\/\//,
@@ -63,6 +86,10 @@ export default function ExternalBrowser() {
     // 기타 환경
     else {
       window.open(loginUrl, "_system");
+      // 백업으로 일반 링크도 시도
+      setTimeout(() => {
+        window.location.href = loginUrl;
+      }, 1000);
     }
   };
 
