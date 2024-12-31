@@ -184,7 +184,12 @@ export default function Home() {
               priority
             />
           </div>
-          <span>{session?.user?.name}</span>
+          <span
+            onClick={() => router.push("/profile")}
+            className={styles.profileName}
+          >
+            {session?.user?.name}
+          </span>
         </div>
         <button onClick={() => signOut()} className={styles.signOutButton}>
           로그아웃
