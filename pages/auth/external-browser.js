@@ -37,8 +37,33 @@ export default function ExternalBrowser() {
   }, []);
 
   const handleOpenBrowser = () => {
-    // 시스템 브라우저로 열기
-    window.location.href = window.location.origin + "/api/auth/signin";
+    const loginUrl = window.location.origin + "/api/auth/signin";
+
+    // iOS
+    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      window.location.href = `googlechrome://${loginUrl.replace(
+        /^https?:\/\//,
+        ""
+      )}`;
+      // 크롬이 없는 경우를 대비해 약간의 지연 후 Safari로 시도
+      setTimeout(() => {
+        window.location.href = `safari-https://${loginUrl.replace(
+          /^https?:\/\//,
+          ""
+        )}`;
+      }, 2000);
+    }
+    // Android
+    else if (/Android/.test(navigator.userAgent)) {
+      window.location.href = `intent://${loginUrl.replace(
+        /^https?:\/\//,
+        ""
+      )}#Intent;scheme=https;package=com.android.chrome;end`;
+    }
+    // 기타 환경
+    else {
+      window.open(loginUrl, "_system");
+    }
   };
 
   return (
