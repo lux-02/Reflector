@@ -6,12 +6,15 @@ import Image from "next/image";
 import { useLocale } from "@/contexts/LocaleContext";
 import { translations } from "@/constants/translations";
 import LanguageSelector from "@/components/LanguageSelector";
+import AnswerModal from "@/components/AnswerModal";
 
 export default function Profile() {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
   const { locale } = useLocale();
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -43,6 +46,44 @@ export default function Profile() {
       );
       return userAnswer;
     });
+  };
+
+  const handleQuestionClick = (question) => {
+    setSelectedQuestion(question);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedQuestion(null);
+  };
+
+  const handleSaveAnswer = async (questionId, answer) => {
+    try {
+      const response = await fetch(`/api/questions/${questionId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          answer,
+          userId: session.user.id,
+        }),
+      });
+
+      if (response.ok) {
+        await fetchAnsweredQuestions();
+        setShowModal(false);
+        setSelectedQuestion(null);
+      } else {
+        const data = await response.json();
+        console.error("답변 저장 실패:", data.error);
+        alert("답변 저장에 실패했습니다. 다시 시도해주세요.");
+      }
+    } catch (error) {
+      console.error("답변 저장 중 오류:", error);
+      alert("답변 저장 중 오류가 발생했습니다.");
+    }
   };
 
   if (status === "loading") {
@@ -77,6 +118,9 @@ export default function Profile() {
       </div>
 
       <section className={styles.answeredSection}>
+        <h2 className={styles.sectionTitle} lang={locale}>
+          {translations.profile.answeredQuestions[locale]}
+        </h2>
         {answeredQuestions.length === 0 ? (
           <div className={styles.noAnswers}>
             <p lang={locale}>{translations.profile.noAnswers[locale]}</p>
@@ -91,7 +135,11 @@ export default function Profile() {
         ) : (
           <div className={styles.questionList}>
             {answeredQuestions.map((question) => (
-              <div key={question._id} className={styles.questionItem}>
+              <div
+                key={question._id}
+                className={styles.questionItem}
+                onClick={() => handleQuestionClick(question)}
+              >
                 <h3 className={styles.questionText} lang={locale}>
                   {question.text[locale]}
                 </h3>
@@ -106,6 +154,14 @@ export default function Profile() {
           </div>
         )}
       </section>
+
+      {showModal && selectedQuestion && (
+        <AnswerModal
+          question={selectedQuestion}
+          onClose={handleCloseModal}
+          onSave={handleSaveAnswer}
+        />
+      )}
     </div>
   );
 }
