@@ -24,6 +24,26 @@ export const translations = {
     en: "Initializing...",
     jp: "初期化中...",
   },
+  save: {
+    ko: "저장",
+    en: "Save",
+    jp: "保存",
+  },
+  answerPlaceholder: {
+    ko: "답변을 입력하세요...",
+    en: "Enter your answer...",
+    jp: "答えを入力してください...",
+  },
+  cancel: {
+    ko: "취소",
+    en: "Cancel",
+    jp: "キャンセル",
+  },
+  edit: {
+    ko: "수정",
+    en: "Edit",
+    jp: "編集",
+  },
   profile: {
     title: {
       ko: "프로필",

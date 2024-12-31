@@ -28,6 +28,15 @@ export default function AnswerModal({ question, onClose, onSave }) {
     }
   };
 
+  const getTranslation = (key, defaultValue = "") => {
+    try {
+      return translations[key][locale] || defaultValue;
+    } catch (error) {
+      console.warn(`Translation missing for key: ${key}, locale: ${locale}`);
+      return defaultValue;
+    }
+  };
+
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modal}>
@@ -35,19 +44,22 @@ export default function AnswerModal({ question, onClose, onSave }) {
           ×
         </button>
         <h2 className={styles.question} lang={locale}>
-          {question.text[locale]}
+          {question.text?.[locale] || question.text?.ko || ""}
         </h2>
         <form onSubmit={handleSubmit}>
           <textarea
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
-            placeholder={translations.answerPlaceholder[locale]}
+            placeholder={getTranslation(
+              "answerPlaceholder",
+              "답변을 입력하세요..."
+            )}
             className={styles.answerInput}
             required
           />
           <div className={styles.buttonContainer}>
             <button type="submit" className={styles.saveButton} lang={locale}>
-              {translations.save[locale]}
+              {getTranslation("save", "저장")}
             </button>
           </div>
         </form>
