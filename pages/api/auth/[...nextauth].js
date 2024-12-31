@@ -10,7 +10,9 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-  adapter: MongoDBAdapter(clientPromise),
+  adapter: MongoDBAdapter(clientPromise, {
+    databaseName: "reflector",
+  }),
   secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
