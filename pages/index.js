@@ -8,7 +8,7 @@ import CategoryModal from "@/components/CategoryModal";
 import { useLocale } from "@/contexts/LocaleContext";
 import LanguageSelector from "@/components/LanguageSelector";
 import { translations } from "@/constants/translations";
-import { useAnalytics } from "@/hooks/useAnalytics";
+import { event, ANALYTICS_EVENTS } from "@/utils/analytics";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -23,7 +23,6 @@ export default function Home() {
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const scrollRef = useRef(null);
   const { locale } = useLocale();
-  const { trackUserEngagement, trackAnswerCompletion } = useAnalytics();
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -53,7 +52,11 @@ export default function Home() {
   const handleQuestionClick = (question) => {
     setSelectedQuestion(question);
     setShowModal(true);
-    trackUserEngagement(session.user.id, "question_view");
+    event({
+      ...ANALYTICS_EVENTS.VIEW_QUESTION,
+      label: question.text[locale],
+      value: question._id,
+    });
   };
 
   const handleCloseModal = () => {
@@ -75,14 +78,14 @@ export default function Home() {
       });
 
       if (response.ok) {
+        event({
+          ...ANALYTICS_EVENTS.ANSWER_QUESTION,
+          label: selectedQuestion.text[locale],
+          value: questionId,
+        });
         await fetchData();
         setShowModal(false);
         setSelectedQuestion(null);
-
-        const category = selectedQuestion.category[locale];
-        const completedCount = getCompletedCount(questions);
-        trackAnswerCompletion(session.user.id, category, completedCount);
-        trackUserEngagement(session.user.id, "answer_save");
       } else {
         const data = await response.json();
         console.error("답변 저장 실패:", data.error);
@@ -139,6 +142,10 @@ export default function Home() {
 
   const handleCategoryClick = (category) => {
     setCurrentCategory(category);
+    event({
+      ...ANALYTICS_EVENTS.CHANGE_CATEGORY,
+      label: category[locale],
+    });
     const categoryElement = document.querySelector(
       `[data-category='${JSON.stringify(category)}']`
     );
