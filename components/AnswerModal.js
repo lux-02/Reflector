@@ -1,9 +1,11 @@
 import { useState } from "react";
 import styles from "@/styles/AnswerModal.module.css";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export default function AnswerModal({ question, onClose, onSave }) {
   const [answer, setAnswer] = useState(question.answer || "");
   const hasAnswer = Boolean(question.answer);
+  const { locale } = useLocale();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ export default function AnswerModal({ question, onClose, onSave }) {
       }`}
     >
       <div className={styles.modal}>
-        <h2>{question.text}</h2>
+        <h2>{question.text[locale]}</h2>
         <form onSubmit={handleSubmit}>
           <textarea
             value={answer}

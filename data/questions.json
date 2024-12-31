@@ -1,18 +1,2603 @@
 {
   "questions": [
     {
-      "text": "올해 가장 많이 만난 사람은 누구인가요?",
-      "category": "Relationships",
+      "text": {
+        "ko": "올해 가장 많이 만난 사람은 누구인가요?",
+        "en": "Who did you meet the most this year?",
+        "jp": "今年最も多く会った人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
       "answer": ""
     },
     {
-      "text": "올해 가장 고마운 사람은 누구인가요?",
-      "category": "Relationships",
+      "text": {
+        "ko": "올해 가장 고마운 사람은 누구인가요?",
+        "en": "Who are you most grateful to this year?",
+        "jp": "今年最も感謝している人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
       "answer": ""
     },
     {
-      "text": "올해 가장 친해진 사람은 누구인가요?",
-      "category": "Relationships",
+      "text": {
+        "ko": "올해 가장 친해진 사람은 누구인가요?",
+        "en": "Who did you become closest to this year?",
+        "jp": "今年最も親しくなった人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 새롭게 알게 된 사람 중 특별한 인연은 누구인가요?",
+        "en": "Among the new people you met this year, who was the most special connection?",
+        "jp": "今年新たに出会った人の中で、特に特別な縁だったのは誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 연락을 많이 한 사람은 누구인가요?",
+        "en": "Who did you stay in touch with the most?",
+        "jp": "一番多く連絡をとった人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 기억에 남는 대화는 무엇이었나요?",
+        "en": "What conversation was the most memorable?",
+        "jp": "最も印象に残っている会話は何でしたか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "연인과의 관계에서 배운 점은 무엇인가요?",
+        "en": "What did you learn from your romantic relationship?",
+        "jp": "恋人との関係で学んだことは何ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가족과의 관계에서 느낀 점은 무엇인가요?",
+        "en": "What have you felt in your relationships with family?",
+        "jp": "家族との関係で感じたことは何ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "친구들과의 소중한 추억은 무엇인가요?",
+        "en": "What precious memories do you have with your friends?",
+        "jp": "友達との大切な思い出は何ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 많은 도움을 받은 사람은 누구인가요?",
+        "en": "Who gave you the most help this year?",
+        "jp": "今年最も助けになってくれた人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 많은 영향을 받은 사람은 누구인가요?",
+        "en": "Who influenced you the most this year?",
+        "jp": "今年最も影響を受けた人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 나에게 위로가 되었던 사람은 누구인가요?",
+        "en": "Who was the greatest comfort to you this year?",
+        "jp": "今年最も自分を慰めてくれた人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "어려웠던 인간관계를 어떻게 극복했나요?",
+        "en": "How did you overcome challenging relationships?",
+        "jp": "困難だった人間関係をどのように克服しましたか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 새롭게 맺은 관계 중 가장 의미 있었던 관계는 무엇인가요?",
+        "en": "Which new relationship this year was the most meaningful?",
+        "jp": "今年新たに築いた関係の中で最も意味があったのは何ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "갈등이 있었던 관계를 어떻게 해결했나요?",
+        "en": "How did you resolve a relationship conflict you experienced?",
+        "jp": "衝突があった関係をどのように解決しましたか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 자주 연락했던 친구는 누구인가요?",
+        "en": "Which friend were you in contact with most frequently?",
+        "jp": "最も頻繁に連絡を取った友人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "주변 사람들에게 감사의 마음을 전한 순간은 언제인가요?",
+        "en": "When did you express your gratitude to those around you?",
+        "jp": "周囲の人々に感謝の気持ちを伝えた瞬間はいつですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 만남 중 가장 인상 깊었던 사람은 누구인가요?",
+        "en": "Who was the most memorable person you met this year?",
+        "jp": "今年会った人の中で最も印象に残ったのは誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "누군가에게 받은 최고의 선물은 무엇이었나요?",
+        "en": "What was the best gift you received from someone?",
+        "jp": "誰かからもらった最高のプレゼントは何でしたか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 큰 지지를 보낸 사람은 누구인가요?",
+        "en": "Who gave you the most support this year?",
+        "jp": "今年最も大きな支援をしてくれた人は誰ですか？"
+      },
+      "category": {
+        "ko": "관계",
+        "en": "Relationships",
+        "jp": "関係"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 이뤄낸 가장 자랑스러운 성과는 무엇인가요?",
+        "en": "What is the achievement you are most proud of this year?",
+        "jp": "今年達成した中で最も誇りに思う成果は何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 초에 결심했던 2024년 목표는 무엇이었나요?",
+        "en": "What was your 2024 goal that you decided on at the beginning of this year?",
+        "jp": "今年の初めに決意した2024年の目標は何でしたか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "내년에 도전하고 싶은 새로운 목표는 무엇인가요?",
+        "en": "What new goal would you like to challenge yourself with next year?",
+        "jp": "来年挑戦したい新たな目標は何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 의미 있었던 도전은 무엇이었나요?",
+        "en": "What was the most meaningful challenge you took on this year?",
+        "jp": "今年最も意義深かった挑戦は何でしたか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "내년 목표를 달성하기 위해 어떤 계획을 세울 것인가요?",
+        "en": "What plans will you make to achieve your goals next year?",
+        "jp": "来年の目標を達成するためにどのような計画を立てる予定ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 잘한 일은 무엇인가요?",
+        "en": "What was the best thing you did this year?",
+        "jp": "今年一番上手くできたことは何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 의미 있는 도전은 무엇이었나요?",
+        "en": "What was the most meaningful challenge for you this year?",
+        "jp": "今年最も意味があった挑戦は何でしたか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "목표 달성을 위해 가장 크게 기여한 행동은 무엇인가요?",
+        "en": "Which action contributed the most to achieving your goals?",
+        "jp": "目標達成に最も貢献した行動は何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 목표 중 미달성한 목표는 무엇이며, 그 이유는 무엇인가요?",
+        "en": "Which of your goals remained unachieved this year, and why?",
+        "jp": "今年達成できなかった目標は何で、その理由は何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 목표를 달성하면서 배운 점은 무엇인가요?",
+        "en": "What did you learn while achieving your goals this year?",
+        "jp": "今年目標を達成する中で学んだことは何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 큰 목표 달성에 기여한 습관은 무엇인가요?",
+        "en": "Which habit contributed most to accomplishing your biggest goal?",
+        "jp": "最も大きな目標の達成に最も貢献した習慣は何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "목표를 위해 희생한 것은 무엇인가요?",
+        "en": "What did you sacrifice for your goals?",
+        "jp": "目標のために犠牲にしたものは何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 목표를 달성하는 데 가장 큰 장애물은 무엇이었나요?",
+        "en": "What was the biggest obstacle in achieving your goals this year?",
+        "jp": "今年目標を達成する上で最も大きな障害は何でしたか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 목표를 달성하기 위해 사용한 자원은 무엇인가요?",
+        "en": "What resources did you use to achieve your goals this year?",
+        "jp": "今年目標を達成するために使用したリソースは何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 목표 달성을 통해 얻은 가장 큰 보상은 무엇인가요?",
+        "en": "What was the greatest reward you gained from accomplishing your goals?",
+        "jp": "目標を達成して得られた最大の報酬は何でしたか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "내년 목표를 세울 때 가장 중점을 둘 부분은 무엇인가요?",
+        "en": "What will you focus on the most when setting next year’s goals?",
+        "jp": "来年の目標を立てる際に最も重点を置く部分は何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 설정한 목표 중 가장 어려웠던 목표는 무엇인가요?",
+        "en": "Which of the goals you set this year was the most challenging?",
+        "jp": "今年設定した目標の中で最も難しかったものは何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "목표 달성을 위해 누구의 도움을 받았나요?",
+        "en": "Whose help did you receive to achieve your goals?",
+        "jp": "目標達成のために誰の助けを得ましたか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 목표를 달성하면서 겪은 가장 큰 변화는 무엇인가요?",
+        "en": "What was the biggest change you experienced while achieving your goals this year?",
+        "jp": "今年目標を達成する過程で経験した最も大きな変化は何ですか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "목표 설정과 달성 과정에서 느낀 감정은 어땠나요?",
+        "en": "How did you feel during the process of setting and achieving your goals?",
+        "jp": "目標を設定し、達成する過程でどのような感情を抱きましたか？"
+      },
+      "category": {
+        "ko": "성과와 목표",
+        "en": "Achievements and Goals",
+        "jp": "成果と目標"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 스스로 느낀 가장 큰 변화는 무엇인가요?",
+        "en": "What is the biggest change you’ve noticed in yourself this year?",
+        "jp": "今年自分自身で最も大きく変化したと感じるのは何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 내가 가장 성장했다고 느낀 순간은 언제인가요?",
+        "en": "When did you feel you grew the most this year?",
+        "jp": "今年最も成長したと感じた瞬間はいつですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 변화한 생각이나 가치관은 무엇인가요?",
+        "en": "Which thought or value changed the most for you this year?",
+        "jp": "今年最も変化した考え方や価値観は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나의 어린 시절 꿈과 현재의 나는 어떻게 다른가요?",
+        "en": "How does your childhood dream differ from who you are now?",
+        "jp": "子供の頃の夢と今の自分はどのように違いますか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해의 나를 한 단어로 표현한다면 무엇인가요?",
+        "en": "If you were to describe yourself this year in one word, what would it be?",
+        "jp": "今年の自分を一言で表すとしたら何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나의 인생 모토는 무엇인가요?",
+        "en": "What is your life motto?",
+        "jp": "あなたの人生のモットーは何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나를 움직이게 하는 삶의 동력은 무엇인가요?",
+        "en": "What drives you in life?",
+        "jp": "あなたが行動する原動力は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "스스로 느낀 가장 큰 성장은 어떤 부분인가요?",
+        "en": "In what area do you feel you have grown the most?",
+        "jp": "自分自身が最も成長したと感じる部分はどこですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 나 자신에게 해주고 싶은 말은 무엇인가요?",
+        "en": "What would you like to say to yourself this year?",
+        "jp": "今年の自分にかけたい言葉は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 배운 가장 중요한 교훈은 무엇인가요?",
+        "en": "What is the most important lesson you learned this year?",
+        "jp": "今年学んだ最も重要な教訓は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 극복한 가장 큰 두려움은 무엇인가요?",
+        "en": "What was the biggest fear you overcame this year?",
+        "jp": "今年克服した最大の恐れは何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 개발한 새로운 기술이나 능력은 무엇인가요?",
+        "en": "What new skills or abilities did you develop this year?",
+        "jp": "今年新たに身につけた技術や能力は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "자신에 대해 새롭게 알게 된 점은 무엇인가요?",
+        "en": "What did you discover about yourself this year?",
+        "jp": "今年、自分自身について新たに気づいた点は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 자신에게 투자한 시간과 노력은 어떻게 되었나요?",
+        "en": "How did you invest your time and effort in yourself this year?",
+        "jp": "今年自分自身に費やした時間と努力はどのような形になりましたか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 스스로에게 가장 자랑스러웠던 순간은 언제인가요?",
+        "en": "When were you most proud of yourself this year?",
+        "jp": "今年自分自身を最も誇りに思った瞬間はいつですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 자신의 한계를 극복한 경험은 무엇인가요?",
+        "en": "What experience did you have in overcoming your own limits this year?",
+        "jp": "今年自分の限界を乗り越えた経験は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 자신을 위해 한 가장 큰 변화는 무엇인가요?",
+        "en": "What was the biggest change you made for yourself this year?",
+        "jp": "今年自分のために起こした最も大きな変化は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 자신에게 주어진 가장 큰 도전은 무엇이었나요?",
+        "en": "What was the biggest challenge given to you this year?",
+        "jp": "今年自分に与えられた最も大きな挑戦は何でしたか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 자신을 더 잘 이해하게 된 순간은 언제였나요?",
+        "en": "When did you come to understand yourself better this year?",
+        "jp": "今年、自分自身をよりよく理解できた瞬間はいつでしたか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 자신에게 가장 긍정적인 영향을 준 활동은 무엇인가요?",
+        "en": "Which activity had the most positive impact on you this year?",
+        "jp": "今年自分に最も良い影響を与えた活動は何ですか？"
+      },
+      "category": {
+        "ko": "개인적 성장과 변화",
+        "en": "Personal Growth and Change",
+        "jp": "自己成長と変化"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 즐겁게 몰입했던 취미는 무엇인가요?",
+        "en": "Which hobby did you enjoy immersing yourself in the most this year?",
+        "jp": "今年最も熱中して楽しんだ趣味は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "새로 시작한 취미는 무엇인가요?",
+        "en": "What new hobby did you start?",
+        "jp": "新たに始めた趣味は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 즐겨했던 음악 장르는 무엇인가요?",
+        "en": "Which music genre did you enjoy the most this year?",
+        "jp": "今年最も好んで聴いた音楽のジャンルは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "입덕한 연예인은 누구인가요?",
+        "en": "Which celebrity did you become a big fan of?",
+        "jp": "新たにハマった芸能人は誰ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 기억에 남는 꿈은 무엇인가요?",
+        "en": "What was the most memorable dream you had?",
+        "jp": "最も印象に残っている夢は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 새로 시작한 취미는 무엇인가요?",
+        "en": "What new hobby did you begin this year?",
+        "jp": "今年新しく始めた趣味は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 즐겨 들었던 음악은 무엇인가요?",
+        "en": "Which music did you enjoy listening to this year?",
+        "jp": "今年よく聴いた音楽は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 즐겨했던 취미는 무엇인가요?",
+        "en": "What was your most enjoyed hobby this year?",
+        "jp": "今年最も楽しんだ趣味は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 참여한 특별한 여가 활동은 무엇인가요?",
+        "en": "What special leisure activity did you participate in this year?",
+        "jp": "今年参加した特別な余暇活動は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 기억에 남는 영화나 드라마는 무엇인가요?",
+        "en": "Which movie or drama was the most memorable for you this year?",
+        "jp": "今年最も印象に残った映画またはドラマは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 자주 간 카페나 음식점은 어디인가요?",
+        "en": "Which cafe or restaurant did you visit most frequently this year?",
+        "jp": "今年最もよく行ったカフェやレストランはどこですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 시도해본 새로운 스포츠는 무엇인가요?",
+        "en": "Which new sport did you try out this year?",
+        "jp": "今年挑戦してみた新しいスポーツは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 본 유튜브 채널은 무엇인가요?",
+        "en": "Which YouTube channel did you watch the most this year?",
+        "jp": "今年最も視聴したYouTubeチャンネルは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 참여한 워크숍이나 클래스는 무엇인가요?",
+        "en": "What workshop or class did you attend this year?",
+        "jp": "今年参加したワークショップやクラスは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 즐겨 했던 독서 목록은 무엇인가요?",
+        "en": "Which books were on your favorite reading list this year?",
+        "jp": "今年よく読んだ本のリストは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 만든 가장 만족스러운 예술 작품은 무엇인가요?",
+        "en": "Which piece of art that you created this year are you most satisfied with?",
+        "jp": "今年作った作品の中で最も満足しているものは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 참여한 문화 행사나 축제는 무엇인가요?",
+        "en": "Which cultural event or festival did you attend this year?",
+        "jp": "今年参加した文化行事や祭りは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 새롭게 배우기 시작한 기술이나 취미는 무엇인가요?",
+        "en": "What new skill or hobby did you start learning this year?",
+        "jp": "今年新しく学び始めた技術や趣味は何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 했던 게임은 무엇인가요?",
+        "en": "Which game did you play the most this year?",
+        "jp": "今年最もプレイしたゲームは何ですか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 기억에 남는 여행은 어디로 갔나요?",
+        "en": "Which trip was the most memorable for you this year?",
+        "jp": "今年最も印象に残った旅行先はどこでしたか？"
+      },
+      "category": {
+        "ko": "취미와 여가",
+        "en": "Hobbies and Leisure",
+        "jp": "趣味と余暇"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 만족스러웠던 소비는 무엇인가요?",
+        "en": "What was the most satisfying purchase you made this year?",
+        "jp": "今年最も満足した消費は何でしたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 내가 쓴 돈은 어디에 주로 쓰였나요?",
+        "en": "Where did you spend most of your money this year?",
+        "jp": "今年使ったお金は主に何に費やしましたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 많이 산 것은 무엇인가요?",
+        "en": "What did you buy the most of?",
+        "jp": "最も多く買ったものは何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 많이 사용한 앱은 무엇인가요?",
+        "en": "Which app did you use the most this year?",
+        "jp": "今年最もよく使ったアプリは何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나의 저금 현황은 어떻게 되나요?",
+        "en": "How are your savings looking?",
+        "jp": "あなたの貯金状況はどのようになっていますか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "제일 후회하는 소비는 무엇인가요?",
+        "en": "Which purchase do you regret the most?",
+        "jp": "一番後悔している消費は何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "최고의 소비는 무엇이었나요?",
+        "en": "What was your best purchase this year?",
+        "jp": "今年最も良かった買い物は何でしたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나만의 소비일지를 작성해 보셨나요?",
+        "en": "Have you kept a personal spending journal?",
+        "jp": "自分だけの消費日記をつけたことはありますか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 예산 관리는 어떻게 했나요?",
+        "en": "How did you manage your budget this year?",
+        "jp": "今年はどのように予算管理をしましたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 큰 재정적 성취는 무엇이었나요?",
+        "en": "What was your greatest financial accomplishment?",
+        "jp": "最も大きな財政的達成は何でしたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 투자한 것은 무엇인가요?",
+        "en": "What did you invest in this year?",
+        "jp": "今年投資したものは何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 절약한 방법은 무엇인가요?",
+        "en": "How did you save money this year?",
+        "jp": "今年どのように節約しましたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 큰 재정적 실수는 무엇이었나요?",
+        "en": "What was your biggest financial mistake?",
+        "jp": "最も大きな財政的失敗は何でしたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 지출을 줄이기 위해 한 노력은 무엇인가요?",
+        "en": "What efforts did you make to reduce your expenses this year?",
+        "jp": "今年支出を減らすために行った努力は何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "재정 목표를 세우고 달성했나요?",
+        "en": "Did you set and achieve any financial goals?",
+        "jp": "財政目標を設定し、達成しましたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 큰 금전적 도전은 무엇이었나요?",
+        "en": "What was your biggest financial challenge this year?",
+        "jp": "今年最も大きな金銭的挑戦は何でしたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "재정 관리를 위해 새로 도입한 습관은 무엇인가요?",
+        "en": "What new habits did you adopt for financial management?",
+        "jp": "財務管理のために新しく取り入れた習慣は何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 추가로 벌어들인 수입은 무엇인가요?",
+        "en": "What additional income did you earn this year?",
+        "jp": "今年追加で得た収入は何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "재정적 안정을 위해 무엇을 했나요?",
+        "en": "What did you do to maintain financial stability?",
+        "jp": "財政的安定を保つために何をしましたか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "내년 재정 목표는 무엇인가요?",
+        "en": "What are your financial goals for next year?",
+        "jp": "来年の財政目標は何ですか？"
+      },
+      "category": {
+        "ko": "소비와 재정관리",
+        "en": "Consumption and Financial Management",
+        "jp": "消費と財務管理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해의 건강 상태는 어떠했나요?",
+        "en": "How was your overall health this year?",
+        "jp": "今年の健康状態はいかがでしたか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나의 몸무게 변화는 어떻게 되었나요?",
+        "en": "How has your weight changed over the year?",
+        "jp": "1年間で体重はどのように変わりましたか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 느낀 감정은 무엇인가요?",
+        "en": "Which emotion did you feel most often this year?",
+        "jp": "今年最もよく感じた感情は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "스트레스 해소법은 무엇인가요?",
+        "en": "How do you relieve stress?",
+        "jp": "ストレスを解消する方法は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "건강을 위해 새롭게 들인 습관은 무엇인가요?",
+        "en": "Which new habit have you adopted for your health?",
+        "jp": "健康のために新しく取り入れた習慣は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 느꼈던 감정은 무엇인가요?",
+        "en": "Which emotion did you experience most frequently this year?",
+        "jp": "今年最も頻繁に感じた感情は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 규칙적으로 한 운동은 무엇인가요?",
+        "en": "Which exercise did you do regularly this year?",
+        "jp": "今年定期的に行った運動は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 식습관에서 바뀐 점은 무엇인가요?",
+        "en": "How have your eating habits changed this year?",
+        "jp": "今年食習慣で変わった点は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 받은 건강 관련 진료는 무엇인가요?",
+        "en": "What kind of health-related medical care did you receive this year?",
+        "jp": "今年受けた健康に関する診療はどのようなものでしたか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 취한 건강 보조제는 무엇인가요?",
+        "en": "Which health supplements did you take this year?",
+        "jp": "今年摂取した健康補助食品は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "정신 건강을 위해 한 일은 무엇인가요?",
+        "en": "What did you do for your mental health?",
+        "jp": "メンタルヘルスのためにどのようなことを行いましたか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 사용한 피트니스 앱은 무엇인가요?",
+        "en": "Which fitness app did you use the most this year?",
+        "jp": "今年最もよく使ったフィットネスアプリは何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 참여한 건강 관련 활동은 무엇인가요?",
+        "en": "What health-related activities did you participate in this year?",
+        "jp": "今年参加した健康関連の活動は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 시도해본 새로운 운동은 무엇인가요?",
+        "en": "Which new exercise did you try out this year?",
+        "jp": "今年新しく試してみた運動は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해의 수면 패턴은 어땠나요?",
+        "en": "How would you describe your sleep pattern this year?",
+        "jp": "今年の睡眠パターンはどのようでしたか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 체력적으로 가장 힘들었던 순간은 언제였나요?",
+        "en": "When did you feel physically challenged the most this year?",
+        "jp": "今年体力的に最も辛かった瞬間はいつでしたか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "건강을 위해 버린 나쁜 습관은 무엇인가요?",
+        "en": "Which bad habit did you give up for your health?",
+        "jp": "健康のためにやめた悪い習慣は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 받은 가장 큰 건강상의 도움은 무엇이었나요?",
+        "en": "What was the greatest health-related assistance you received this year?",
+        "jp": "今年受けた健康面で最も大きな助けは何でしたか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 건강을 위해 한 가장 큰 변화는 무엇인가요?",
+        "en": "What was the biggest change you made for your health this year?",
+        "jp": "今年健康のために行った最も大きな変化は何ですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "내년에 개선하고 싶은 건강 관련 부분은 무엇인가요?",
+        "en": "Which aspect of your health do you want to improve next year?",
+        "jp": "来年改善したい健康関連の部分はどこですか？"
+      },
+      "category": {
+        "ko": "건강 및 웰빙",
+        "en": "Health and Well-being",
+        "jp": "健康とウェルビーイング"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 다녀온 여행 중 가장 기억에 남는 곳은 어디인가요?",
+        "en": "Among the trips you took this year, which place was the most memorable?",
+        "jp": "今年行った旅行の中で最も印象に残っている場所はどこですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 특별했던 장소는 어디인가요?",
+        "en": "What was the most special place for you this year?",
+        "jp": "今年最も特別だった場所はどこですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 다녀온 여행지 중 가장 기억에 남는 곳은 어디인가요?",
+        "en": "Which of the destinations you visited this year was the most memorable?",
+        "jp": "今年訪れた旅行先の中で、最も印象に残っている場所はどこですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "밤에 별 구경을 해본 경험이 있나요?",
+        "en": "Have you ever gone stargazing at night?",
+        "jp": "夜に星を見に行った経験はありますか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 인상 깊게 다녀온 여행지는 어디인가요?",
+        "en": "Which destination left the strongest impression on you?",
+        "jp": "最も印象深く訪れた旅行先はどこですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 기억에 남는 여행은 무엇이었나요?",
+        "en": "Which trip stands out as the most memorable?",
+        "jp": "最も記憶に残っている旅はどれですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가본 국내 여행지는 어디인가요?",
+        "en": "Which domestic travel destinations did you visit this year?",
+        "jp": "今年行った国内旅行先はどこですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "해외 여행을 다녀왔다면 어디로 갔나요?",
+        "en": "If you traveled abroad, where did you go?",
+        "jp": "海外旅行に行ったとしたら、どこへ行きましたか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행 중 만난 특별한 사람은 누구인가요?",
+        "en": "Did you meet someone special during your trip? If so, who?",
+        "jp": "旅行中に出会った特別な人は誰ですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행 중 가장 맛있게 먹은 음식은 무엇인가요?",
+        "en": "What was the most delicious food you had on your trip?",
+        "jp": "旅行中に最もおいしく食べた料理は何ですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행에서 배운 가장 중요한 교훈은 무엇인가요?",
+        "en": "What is the most important lesson you learned from your travels?",
+        "jp": "旅行を通じて学んだ最も大切な教訓は何ですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 즐거웠던 여행 활동은 무엇이었나요?",
+        "en": "Which travel-related activity did you enjoy the most this year?",
+        "jp": "今年最も楽しかった旅行でのアクティビティは何ですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행을 계획하면서 가장 중점을 둔 부분은 무엇인가요?",
+        "en": "What aspect did you focus on the most when planning your trips?",
+        "jp": "旅行を計画する際に最も重視した点は何ですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행 중 겪은 가장 큰 도전은 무엇이었나요?",
+        "en": "What was the biggest challenge you faced during your travels?",
+        "jp": "旅行中に直面した最も大きな挑戦は何でしたか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 여행 중 찍은 가장 멋진 사진은 무엇인가요?",
+        "en": "Which photo taken during this year's trip is your favorite?",
+        "jp": "今年の旅行で撮った中で最も素敵な写真は何ですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "다음 여행지로 가고 싶은 곳은 어디인가요?",
+        "en": "Where would you like to go on your next trip?",
+        "jp": "次の旅行先として行きたい場所はどこですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행 중 경험한 가장 놀라운 순간은 무엇이었나요?",
+        "en": "What was the most surprising moment you experienced on your travels?",
+        "jp": "旅行中に体験した中で最も驚いた瞬間は何でしたか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행을 통해 얻은 가장 큰 성장은 무엇인가요?",
+        "en": "What was the greatest personal growth you achieved through traveling?",
+        "jp": "旅行を通じて得た最も大きな成長は何ですか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "혼자 여행한 경험이 있나요? 있었다면 어땠나요?",
+        "en": "Have you traveled alone? If so, how was it?",
+        "jp": "一人旅をした経験はありますか？あった場合はどうでしたか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "여행 중 느낀 가장 큰 변화는 무엇이었나요?",
+        "en": "What was the biggest change you felt while traveling?",
+        "jp": "旅行中に感じた最も大きな変化は何でしたか？"
+      },
+      "category": {
+        "ko": "여행 및 체험",
+        "en": "Travel and Experiences",
+        "jp": "旅行と体験"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 감명 깊게 읽은 책은 무엇인가요?",
+        "en": "Which book impressed you the most this year?",
+        "jp": "今年最も感銘を受けた本は何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나만의 특별한 취미는 무엇인가요?",
+        "en": "Do you have a unique hobby of your own?",
+        "jp": "あなた独自の特別な趣味はありますか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 새롭게 알게 된 사실 중 가장 인상 깊은 것은 무엇인가요?",
+        "en": "What is the most striking fact you learned this year?",
+        "jp": "今年新たに知った事実の中で最も印象的だったのは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "자신의 업무 관련 자격증이나 학위를 취득했나요?",
+        "en": "Did you earn any certifications or degrees related to your work?",
+        "jp": "仕事に関連する資格や学位を取得しましたか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 배운 것 중 가장 유용했던 것은 무엇인가요?",
+        "en": "Of all the things you learned this year, which was the most useful?",
+        "jp": "今年学んだことの中で最も役立ったものは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "자기계발을 위해 투자한 시간과 노력은 어떻게 되었나요?",
+        "en": "How did you invest your time and effort for self-development?",
+        "jp": "自己啓発のために時間と努力をどのように使いましたか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 참여한 교육 프로그램은 무엇인가요?",
+        "en": "Which educational programs did you participate in this year?",
+        "jp": "今年参加した教育プログラムは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 들은 강의나 세미나는 무엇이었나요?",
+        "en": "Which lecture or seminar did you attend most frequently this year?",
+        "jp": "今年最も多く受講した講義やセミナーは何でしたか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 배운 새로운 기술은 무엇인가요?",
+        "en": "What new skill did you learn this year?",
+        "jp": "今年新しく身につけた技術は何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 작성한 노트나 메모 중 가장 유용했던 것은 무엇인가요?",
+        "en": "Which note or memo you made this year was the most useful?",
+        "jp": "今年取ったノートやメモの中で最も役立ったものは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 시도해본 새로운 학습 방법은 무엇인가요?",
+        "en": "What new learning method did you try this year?",
+        "jp": "今年試してみた新しい学習方法は何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 학습한 내용 중 가장 기억에 남는 것은 무엇인가요?",
+        "en": "Which part of what you learned this year stands out the most?",
+        "jp": "今年学んだ内容の中で最も印象に残っているものは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "자기계발을 위해 가장 많이 투자한 자원은 무엇인가요?",
+        "en": "What resource did you invest in the most for self-development?",
+        "jp": "自己啓発のために最も投資したリソースは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 읽은 책 중 다시 읽고 싶은 책은 무엇인가요?",
+        "en": "Which of the books you read this year would you like to read again?",
+        "jp": "今年読んだ本の中で、もう一度読みたいと思う本は何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해의 학습 목표는 무엇이었나요?",
+        "en": "What was your learning goal for this year?",
+        "jp": "今年の学習目標は何でしたか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "학습을 위해 가장 많이 사용한 도구는 무엇인가요?",
+        "en": "Which tool did you use the most for learning?",
+        "jp": "学習のために最も頻繁に使用したツールは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 학습한 내용을 실생활에 어떻게 적용했나요?",
+        "en": "How did you apply what you learned this year to real life?",
+        "jp": "今年学んだ内容をどのように実生活に活かしましたか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "자기계발을 위해 만든 루틴이나 스케줄은 무엇인가요?",
+        "en": "What routine or schedule did you create for self-development?",
+        "jp": "自己啓発のために組んだルーティンやスケジュールは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 배운 것 중 가장 도전적이었던 것은 무엇인가요?",
+        "en": "What was the most challenging thing you learned this year?",
+        "jp": "今年学んだことの中で最も挑戦的だったのは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "내년에 배우고 싶은 새로운 것은 무엇인가요?",
+        "en": "What new thing do you want to learn next year?",
+        "jp": "来年新しく学びたいことは何ですか？"
+      },
+      "category": {
+        "ko": "자기계발 및 학습",
+        "en": "Self-Development and Learning",
+        "jp": "自己啓発と学習"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 냉장고를 정리해보셨나요?",
+        "en": "Have you organized your fridge this year?",
+        "jp": "今年冷蔵庫を整理しましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "명함 정리는 잘 되었나요?",
+        "en": "Did you manage to organize your business cards well?",
+        "jp": "名刺の整理はうまくできましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "서랍 속 물건들을 정리해보셨나요?",
+        "en": "Have you tidied up the items in your drawers?",
+        "jp": "引き出しの中の物を整理しましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "오래된 SNS 게시물을 정리해보셨나요?",
+        "en": "Have you sorted through old social media posts?",
+        "jp": "古いSNS投稿を整理しましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "알림 울리면 바로 끄고 일어나는 습관을 들였나요?",
+        "en": "Have you formed the habit of turning off alarms immediately and getting up?",
+        "jp": "アラームが鳴ったらすぐに消して起きる習慣を身につけましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "집에서 할 수 있는 맨몸운동을 했나요?",
+        "en": "Have you done any bodyweight exercises at home?",
+        "jp": "家でできる自重トレーニングはしましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "이메일함을 정리해보셨나요?",
+        "en": "Have you organized your inbox?",
+        "jp": "メールボックスを整理しましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "한 달 동안 소비를 줄이기 위해 한 노력은 무엇인가요?",
+        "en": "What efforts did you make to reduce spending for a month?",
+        "jp": "1か月間の消費を減らすために行った努力は何ですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "방 청소를 얼마나 자주 했나요?",
+        "en": "How often did you clean your room?",
+        "jp": "部屋の掃除はどのくらいの頻度でしましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "불필요한 물건을 정리하고 버린 것은 무엇인가요?",
+        "en": "Which unnecessary items did you organize and discard?",
+        "jp": "不要な物を整理して捨てたものは何ですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "정리정돈을 통해 얻은 가장 큰 이점은 무엇인가요?",
+        "en": "What is the greatest benefit you've gained from organizing?",
+        "jp": "整理整頓を通じて得られた最大の利点は何ですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 정리한 물건 중 가장 의미 있었던 것은 무엇인가요?",
+        "en": "Which item that you organized this year held the most meaning?",
+        "jp": "今年整理した物の中で、最も意味があったものは何ですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "정기적으로 청소를 하는 습관을 들였나요?",
+        "en": "Have you established a routine for regular cleaning?",
+        "jp": "定期的に掃除をする習慣を身につけましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 서랍이나 옷장을 정리하면서 느낀 점은 무엇인가요?",
+        "en": "What did you feel while organizing your drawers or closet this year?",
+        "jp": "今年引き出しやクローゼットを整理して感じたことは何ですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "정리정돈을 위해 사용한 도구나 방법은 무엇인가요?",
+        "en": "Which tools or methods did you use for organizing?",
+        "jp": "整理整頓のために使った道具や方法は何ですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 정리한 공간은 어디였나요?",
+        "en": "Which space did you organize the most this year?",
+        "jp": "今年最も整理を行った場所はどこですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "정리 후 생활이 어떻게 달라졌나요?",
+        "en": "How did your daily life change after organizing?",
+        "jp": "整理した後の生活はどのように変わりましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "정리를 통해 발견한 새로운 취미나 관심사는 무엇인가요?",
+        "en": "Did you discover any new hobbies or interests through organizing?",
+        "jp": "整理を通じて新たに見つけた趣味や関心事はありますか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "내년에 정리하고 싶은 공간은 어디인가요?",
+        "en": "Which space would you like to organize next year?",
+        "jp": "来年整理したい場所はどこですか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "정리를 통해 얻은 스트레스 해소 효과는 있었나요?",
+        "en": "Did organizing help you relieve stress in any way?",
+        "jp": "整理をすることでストレス解消の効果はありましたか？"
+      },
+      "category": {
+        "ko": "기타 생활 정리",
+        "en": "Other Life Organization",
+        "jp": "その他の生活整理"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 감명 깊게 본 영화는 무엇인가요?",
+        "en": "Which movie left the greatest impression on you this year?",
+        "jp": "今年最も感銘を受けた映画は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 인상 깊게 들은 노래는 무엇인가요?",
+        "en": "Which song struck you the most this year?",
+        "jp": "今年最も印象的だった曲は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 기억에 남는 음식은 무엇인가요?",
+        "en": "Which dish do you remember the most from this year?",
+        "jp": "今年最も記憶に残っている食べ物は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 인상 깊었던 문구는 무엇인가요?",
+        "en": "Which phrase left the strongest impression on you this year?",
+        "jp": "今年最も印象に残ったフレーズは何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 기억에 남는 말이나 문장은 무엇인가요?",
+        "en": "Which words or sentences do you remember the most from this year?",
+        "jp": "今年最も記憶に残っている言葉や文章は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 기억에 남는 선물은 무엇인가요?",
+        "en": "What is the most memorable gift you received this year?",
+        "jp": "今年最も印象に残った贈り物は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "실패했지만 배움이 되었던 일은 무엇인가요?",
+        "en": "What did you fail at but still learn something valuable from?",
+        "jp": "失敗したけれど学びになったことは何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 많이 입었던 옷이나 스타일은 무엇인가요?",
+        "en": "Which clothing or style did you wear the most this year?",
+        "jp": "今年最も多く着た服やスタイルは何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 들인 새로운 습관은 무엇인가요?",
+        "en": "Which new habit did you develop this year?",
+        "jp": "今年新たに身につけた習慣は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 최근에 쇼핑한 물건은 무엇인가요?",
+        "en": "What is the most recent thing you purchased?",
+        "jp": "最近買った物は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 좋아하는 향기는 무엇인가요?",
+        "en": "What is your favorite scent?",
+        "jp": "一番好きな香りは何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나의 쇼핑 위시 리스트는 무엇인가요?",
+        "en": "What is on your shopping wish list?",
+        "jp": "あなたのショッピングウィッシュリストには何がありますか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 좋아하는 계절은 언제인가요?",
+        "en": "Which season is your favorite?",
+        "jp": "一番好きな季節はいつですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나의 인생 모토는 무엇인가요?",
+        "en": "What is your life motto?",
+        "jp": "あなたの人生のモットーは何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 기억에 남는 결심은 무엇인가요?",
+        "en": "Which resolution do you remember the most?",
+        "jp": "最も印象に残っている決心は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "나의 버킷 리스트 Top 5는 무엇인가요?",
+        "en": "What are the top 5 things on your bucket list?",
+        "jp": "あなたのバケットリストのトップ5は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "올해 가장 아쉬웠던 점은 무엇인가요?",
+        "en": "What do you regret the most about this year?",
+        "jp": "今年最も残念だった点は何ですか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 충격적이었던 사건은 무엇이었나요?",
+        "en": "What was the most shocking event for you?",
+        "jp": "最も衝撃的だった出来事は何でしたか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 기뻤던 일은 무엇이었나요?",
+        "en": "What made you happiest this year?",
+        "jp": "今年最も嬉しかったことは何でしたか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
+      "answer": ""
+    },
+    {
+      "text": {
+        "ko": "가장 힘들었던 일은 무엇이었나요?",
+        "en": "What was the hardest thing you went through?",
+        "jp": "最も大変だった出来事は何でしたか？"
+      },
+      "category": {
+        "ko": "추가 질문",
+        "en": "Additional Questions",
+        "jp": "追加の質問"
+      },
       "answer": ""
     }
   ]

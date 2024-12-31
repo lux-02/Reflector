@@ -5,6 +5,9 @@ import { useRouter } from "next/router";
 import AnswerModal from "@/components/AnswerModal";
 import Image from "next/image";
 import CategoryModal from "@/components/CategoryModal";
+import { useLocale } from "@/contexts/LocaleContext";
+import LanguageSelector from "@/components/LanguageSelector";
+import { translations } from "@/constants/translations";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -18,6 +21,7 @@ export default function Home() {
   const categoryRefs = useRef({});
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const scrollRef = useRef(null);
+  const { locale } = useLocale();
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -104,16 +108,19 @@ export default function Home() {
 
     const grouped = {};
     questions.forEach((question) => {
-      if (!grouped[question.category]) {
-        grouped[question.category] = [];
+      const categoryKey = JSON.stringify(question.category);
+      if (!grouped[categoryKey]) {
+        grouped[categoryKey] = [];
       }
-      grouped[question.category].push(question);
+      grouped[categoryKey].push(question);
     });
     return grouped;
   };
 
   const groupedQuestions = groupQuestionsByCategory();
-  const categories = Object.keys(groupedQuestions);
+  const categories = Object.keys(groupedQuestions).map((key) =>
+    JSON.parse(key)
+  );
 
   useEffect(() => {
     if (categories.length > 0 && !currentCategory) {
@@ -124,7 +131,7 @@ export default function Home() {
   const handleCategoryClick = (category) => {
     setCurrentCategory(category);
     const categoryElement = document.querySelector(
-      `[data-category="${category}"]`
+      `[data-category='${JSON.stringify(category)}']`
     );
     if (categoryElement && scrollRef.current) {
       const scrollContainer = scrollRef.current;
@@ -140,7 +147,7 @@ export default function Home() {
   useEffect(() => {
     if (currentCategory) {
       const categoryElement = document.querySelector(
-        `[data-category="${currentCategory}"]`
+        `[data-category='${JSON.stringify(currentCategory)}']`
       );
       if (categoryElement && scrollRef.current) {
         const scrollContainer = scrollRef.current;
@@ -156,18 +163,23 @@ export default function Home() {
 
   const sortQuestionsByAnswer = (questions) => {
     return [...questions].sort((a, b) => {
-      if (a.answer && !b.answer) return 1;
-      if (!a.answer && b.answer) return -1;
+      const aAnswer = a.answers?.find((ans) => ans.userId === session.user.id);
+      const bAnswer = b.answers?.find((ans) => ans.userId === session.user.id);
+      if (aAnswer?.content && !bAnswer?.content) return 1;
+      if (!aAnswer?.content && bAnswer?.content) return -1;
       return 0;
     });
   };
 
   const getCompletedCount = (questions) => {
-    return questions.filter((q) => q.answer).length;
+    return questions.filter((q) => {
+      const userAnswer = q.answers?.find((a) => a.userId === session.user.id);
+      return userAnswer && userAnswer.content;
+    }).length;
   };
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <div>{translations.loading[locale]}</div>;
   }
 
   return (
@@ -191,9 +203,16 @@ export default function Home() {
             {session?.user?.name}
           </span>
         </div>
-        <button onClick={() => signOut()} className={styles.signOutButton}>
-          로그아웃
-        </button>
+        <div className={styles.headerActions}>
+          <LanguageSelector />
+          <button
+            onClick={() => signOut()}
+            className={styles.signOutButton}
+            lang={locale}
+          >
+            {translations.signOut[locale]}
+          </button>
+        </div>
       </div>
 
       {questions.length === 0 && (
@@ -201,8 +220,11 @@ export default function Home() {
           onClick={initializeData}
           disabled={isLoading}
           className={styles.initButton}
+          lang={locale}
         >
-          {isLoading ? "초기화 중..." : "초기 데이터 생성"}
+          {isLoading
+            ? translations.initializing[locale]
+            : translations.initialize[locale]}
         </button>
       )}
 
@@ -211,8 +233,9 @@ export default function Home() {
           <button
             className={styles.viewAllButton}
             onClick={() => setShowCategoryModal(true)}
+            lang={locale}
           >
-            <span>전체 보기</span>
+            <span>{translations.viewAll[locale]}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -228,14 +251,17 @@ export default function Home() {
           <div className={styles.categoryScroll} ref={scrollRef}>
             {categories.map((category) => (
               <button
-                key={category}
-                data-category={category}
+                key={JSON.stringify(category)}
+                data-category={JSON.stringify(category)}
                 className={`${styles.categoryTab} ${
-                  currentCategory === category ? styles.active : ""
+                  JSON.stringify(currentCategory) === JSON.stringify(category)
+                    ? styles.active
+                    : ""
                 }`}
                 onClick={() => handleCategoryClick(category)}
+                lang={locale}
               >
-                {category}
+                {category[locale]}
               </button>
             ))}
           </div>
@@ -243,36 +269,45 @@ export default function Home() {
       </nav>
 
       <div className={styles.categoryContainer}>
-        {currentCategory && groupedQuestions[currentCategory] && (
-          <div className={styles.category}>
-            <div className={styles.categoryTitleWrapper}>
-              <h2 className={styles.categoryTitle}>{currentCategory}</h2>
-              <div className={styles.questionCount}>
-                <span className={styles.completedCount}>
-                  {getCompletedCount(groupedQuestions[currentCategory])}
-                </span>
-                <span className={styles.totalCount}>
-                  / {groupedQuestions[currentCategory].length}
-                </span>
+        {currentCategory &&
+          groupedQuestions[JSON.stringify(currentCategory)] && (
+            <div className={styles.category}>
+              <div className={styles.categoryTitleWrapper}>
+                <h2 className={styles.categoryTitle} lang={locale}>
+                  {currentCategory[locale]}
+                </h2>
+                <div className={styles.questionCount}>
+                  <span className={styles.completedCount}>
+                    {getCompletedCount(
+                      groupedQuestions[JSON.stringify(currentCategory)]
+                    )}
+                  </span>
+                  <span className={styles.totalCount}>
+                    / {groupedQuestions[JSON.stringify(currentCategory)].length}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className={styles.questionList}>
-              {sortQuestionsByAnswer(groupedQuestions[currentCategory]).map(
-                (question) => (
+              <div className={styles.questionList}>
+                {sortQuestionsByAnswer(
+                  groupedQuestions[JSON.stringify(currentCategory)]
+                ).map((question) => (
                   <div
                     key={question._id}
                     className={`${styles.questionItem} ${
-                      question.answer ? styles.answered : ""
+                      question.answers?.find(
+                        (a) => a.userId === session.user.id
+                      )?.content
+                        ? styles.answered
+                        : ""
                     }`}
                     onClick={() => handleQuestionClick(question)}
                   >
-                    {question.text}
+                    <span lang={locale}>{question.text[locale]}</span>
                   </div>
-                )
-              )}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
 
       {showCategoryModal && (
